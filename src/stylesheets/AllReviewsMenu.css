@@ -1,25 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-body{
+
+body {
   height: 100%;
-  margin : 0;
+  margin: 0;
 }
-.homePGrid {
+.allReviewsGrid {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   min-height: 100%;
+  margin-bottom: 60px;
 }
 
-.websitename {
+.pagetitle {
   font-family: "Lato", "sans-serif";
   font-weight: "bold";
   font-size: 2em;
   margin-top: 1em;
 }
 
-.bookemoji {
+.globeemoji {
   margin-top: 1%;
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 150px;
+  max-height: 150px;
+  margin: 20px;
 }

@@ -1,0 +1,9 @@
+const StyledLink = styled.a`
+  color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 0px 16px 1px 1px;
+  :hover {
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+  }
+`;

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.footer {
+    background-color: #343a40!important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7%;
+    max-height: 39.75px;
+  }

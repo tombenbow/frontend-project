@@ -1,25 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 body{
   height: 100%;
   margin : 0;
 }
-.homePGrid {
+.topicMGrid {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items:center;
   min-height: 100%;
+  margin-bottom: 60px;
 }
 
-.websitename {
+.pagetitle {
   font-family: "Lato", "sans-serif";
   font-weight: "bold";
   font-size: 2em;
   margin-top: 1em;
 }
 
-.bookemoji {
+.magnifyingemoji {
   margin-top: 1%;
   max-width: 100px;
   max-height: 100px;
+  margin: 20px;
 }
+
