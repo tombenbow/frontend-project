@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MenuButton from "./MenuButton";
+import ReviewButton from "./ReviewButton";
 import "../stylesheets/AllReviewsMenu.css";
 import axios from "axios";
 
@@ -33,7 +33,7 @@ class AllReviewsMenu extends Component {
         />
 
         {this.state.bookreviews.map((bookreview) => {
-          return <MenuButton buttonName={bookreview.title} />;
+          return <ReviewButton buttonName={bookreview.title} votes = {bookreview.review_votes}/>;
         })}
 
       </div>

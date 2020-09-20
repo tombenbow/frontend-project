@@ -1,22 +1,30 @@
 import React, { Component } from "react";
-import "../stylesheets/MenuButton.css";
+import "../stylesheets/ReviewButton.css";
 import styled from "styled-components";
-import { Link } from "@reach/router";
 
-class MenuButton extends Component {
+class ReviewButton extends Component {
   state = {
     name: this.props.buttonName,
+    href: this.props.href,
+    votes: this.props.votes,
   };
 
   render() {
-    return <MButton to={`/${this.props.attribute}`}>{this.state.name}</MButton>;
+    return (
+      <RButton
+        style={{ fontFamily: "'Lato', sans-serif" }}
+        onClick={this.state.href}
+      >
+        <p style={{ textAlign: "left" }}> {this.state.name} </p>
+        <p style={{ textAlign: "right" }}> {this.state.votes} </p>
+      </RButton>
+    );
   }
 }
 
-const MButton = styled(Link)`
-  text-decoration: none;
+const RButton = styled.button`
   box-shadow: 2px 2px 4px 3px rgba(209, 209, 209, 1);
-  font-family: "Lato", "sans-serif";
+  font-family: "'Lato', sans-serif";
   margin-top: 20px;
   width: 80%;
   color: black;
@@ -34,8 +42,6 @@ const MButton = styled(Link)`
   :hover {
     background-color: rgb(180, 180, 180);
     transition: 0.3s;
-    text-decoration: none;
-    color: black;
   }
 
   /* actually what it looks like afterward */
@@ -51,7 +57,6 @@ const MButton = styled(Link)`
     bottom: 0;
     border-radius: 50% 50% 0 0;
     color: black;
-    text-decoration: none;
   }
 
   /* what the bit that's moved looks like once the animation is complete */
@@ -60,4 +65,4 @@ const MButton = styled(Link)`
   }
 `;
 
-export default MenuButton;
+export default ReviewButton;

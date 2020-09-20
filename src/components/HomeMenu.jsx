@@ -1,6 +1,7 @@
 import React from "react";
 import MenuButton from "./MenuButton";
 import "../stylesheets/HomeMenu.css"
+import {  } from "@reach/router"
 
 function HomeMenu() {
   return (
@@ -13,14 +14,14 @@ function HomeMenu() {
         alt="book emoji"
       />
 
-      <MenuButton buttonName="See All Reviews" />
+      <MenuButton buttonName="See All Reviews" attribute="reviews"/>
 
       <MenuButton
         buttonName="Browse By Topic"
-        href="https://www.bbc.co.uk/sport/football"
+       attribute="topics"
       />
 
-      <MenuButton buttonName="Browse By Reviewer" />
+      <MenuButton buttonName="Browse By Reviewer" attribute="users" />
     </div>
   );
 }
