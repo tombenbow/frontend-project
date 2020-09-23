@@ -15,8 +15,8 @@ class ReviewButton extends Component {
         style={{ fontFamily: "'Lato', sans-serif" }}
         onClick={this.state.href}
       >
-        <p style={{ textAlign: "left" }}> {this.state.name} </p>
-        <p style={{ textAlign: "right" }}> {this.state.votes} </p>
+        <p className = "title"> {this.props.buttonName} </p>
+        <p className = "votes" > Votes: {this.props.votes} </p>
       </RButton>
     );
   }
@@ -38,6 +38,9 @@ const RButton = styled.button`
   z-index: 1;
   background-color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   :hover {
     background-color: rgb(180, 180, 180);
