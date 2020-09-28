@@ -34,7 +34,7 @@ class TopicMenu extends Component {
         />
 
         {this.state.topics.map((topic) => {
-          return <MenuButton buttonName={topic.topic_name} />;
+          return <MenuButton attribute={`topics/${topic.topic_name}`} buttonName={topic.topic_name} />;
         })}
 
       </div>

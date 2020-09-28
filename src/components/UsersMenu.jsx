@@ -34,7 +34,7 @@ class UsersMenu extends Component {
         />
 
         {this.state.users.map((users) => {
-          return <MenuButton buttonName={users.username} />;
+          return <MenuButton attribute={`users/${users.username}`} buttonName={users.username} />;
         })}
 
       </div>

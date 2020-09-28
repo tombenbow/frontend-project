@@ -66,6 +66,7 @@ class AllReviewsMenu extends Component {
             <MenuButton
               buttonName={bookreview.title}
               key={bookreview.review_id}
+              attribute={`reviews/${bookreview.review_id}`}
             />
           );
         })}
