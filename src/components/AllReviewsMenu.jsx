@@ -3,11 +3,13 @@ import MenuButton from "./MenuButton";
 import "../stylesheets/AllReviewsMenu.css";
 import axios from "axios";
 import FilterButton from "./FilterButton";
+import Spinner from 'react-bootstrap/Spinner'
 
 class AllReviewsMenu extends Component {
   state = {
     bookreviews: [],
     query: "",
+    isLoaded: false
   };
 
   componentDidMount() {
@@ -21,14 +23,15 @@ class AllReviewsMenu extends Component {
       .then((data) => {
         this.setState({
           bookreviews: data.all_bookreviews,
+          isLoaded: !this.state.isLoaded
         });
       });
   }
 
-  componentDidUpdate() {
+  handleSubmit = (sort_by, order) => {
     axios
       .get(
-        `https://bookreview-project.herokuapp.com/api/bookreviews${this.state.query}`
+        `https://bookreview-project.herokuapp.com/api/bookreviews?sort_by=${sort_by}&order=${order}`
       )
       .then((response) => {
         return response.data;
@@ -38,19 +41,12 @@ class AllReviewsMenu extends Component {
           bookreviews: data.all_bookreviews,
         });
       });
-  }
-
-  handleSubmit = (sort_by, order) => {
-    console.log(sort_by);
-    console.log(order);
-    this.setState((prev) => {
-      return { ...prev, query: `?sort_by=${sort_by}&order=${order}` };
-    });
   };
 
   render() {
-    return (
+    return this.state.isLoaded ? (
       <div className="allReviewsGrid">
+
         <h1 className="pagetitle">All Reviews</h1>
 
         <img
@@ -70,6 +66,11 @@ class AllReviewsMenu extends Component {
             />
           );
         })}
+        
+      </div>
+    ) : (
+      <div className="spinnerbox">
+        <Spinner animation="border" style={{ color: "#343a40" }} />
       </div>
     );
   }

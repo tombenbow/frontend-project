@@ -9,7 +9,7 @@ function Footer() {
         style={{
           color: "white",
           fontFamily: "'Lato', sans-serif",
-          fontWeight: "bold",
+          fontWeight: "bold"
         }}
       >
         https://github.com/tombenbow

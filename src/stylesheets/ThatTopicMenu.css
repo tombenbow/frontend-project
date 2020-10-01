@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-body {
-  height: 100%;
-  margin: 0;
-}
 .allReviewsGrid {
   display: flex;
   flex-direction: column;
@@ -25,4 +21,13 @@ body {
   max-width: 150px;
   max-height: 150px;
   margin: 20px;
+}
+
+.spinnerbox {
+  height: 85vh; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }

@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-body{
-  height: 100%;
-  margin : 0;
-}
+
 .homePGrid {
   display: flex;
   flex-direction: column;

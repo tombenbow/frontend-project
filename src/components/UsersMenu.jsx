@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import MenuButton from "./MenuButton";
 import "../stylesheets/UsersMenu.css";
 import axios from "axios";
+import Spinner from 'react-bootstrap/Spinner'
 
 class UsersMenu extends Component {
   state = {
     users: [],
+    isLoaded: false,
   };
 
   componentDidMount() {
@@ -17,13 +19,14 @@ class UsersMenu extends Component {
       })
       .then((data) => {
         this.setState({
-          users: data.all_users
+          users: data.all_users,
+          isLoaded: !this.state.isLoaded
         });
       });
   }
 
   render() {
-    return (
+    return this.state.isLoaded ? (
       <div className="topicMGrid">
         <h1 className="pagetitle">Browse by User</h1>
 
@@ -37,6 +40,10 @@ class UsersMenu extends Component {
           return <MenuButton attribute={`users/${users.username}`} buttonName={users.username} />;
         })}
 
+      </div>
+    ) : (
+      <div className="spinnerbox">
+        <Spinner animation="border" style={{ color: "#343a40" }} />
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import React from "react";
 import MenuButton from "./MenuButton";
-import "../stylesheets/HomeMenu.css"
-import {  } from "@reach/router"
+import "../stylesheets/HomeMenu.css";
 
 function HomeMenu() {
   return (
@@ -14,12 +13,9 @@ function HomeMenu() {
         alt="book emoji"
       />
 
-      <MenuButton buttonName="See All Reviews" attribute="reviews"/>
+      <MenuButton buttonName="See All Reviews" attribute="reviews" />
 
-      <MenuButton
-        buttonName="Browse By Topic"
-       attribute="topics"
-      />
+      <MenuButton buttonName="Browse By Topic" attribute="topics" />
 
       <MenuButton buttonName="Browse By Reviewer" attribute="users" />
     </div>

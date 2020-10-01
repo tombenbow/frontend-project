@@ -26,3 +26,12 @@ body{
   max-height: 100px;
   margin: 20px;
 }
+
+.spinnerbox {
+  height: 85vh; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
