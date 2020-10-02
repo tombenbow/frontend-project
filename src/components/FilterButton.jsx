@@ -4,14 +4,13 @@ import "../stylesheets/FilterButton.css";
 class FilterButton extends Component {
   state = {
     sort_by: "review_id",
-    order: "desc"
+    order: "desc",
   };
-
 
   handleChange = (event, type) => {
     event.preventDefault();
     this.setState({
-      [type]: event.target.value
+      [type]: event.target.value,
     });
   };
 
@@ -54,10 +53,14 @@ class FilterButton extends Component {
               Descending
             </option>
           </select>
-
         </form>
-        <button className="filterButton" onClick={()=>this.props.handleSubmit(this.state.sort_by, this.state.order)}>
-            Filter
+        <button
+          className="filterButton"
+          onClick={() =>
+            this.props.handleSubmit(this.state.sort_by, this.state.order)
+          }
+        >
+          Filter
         </button>
       </div>
     );

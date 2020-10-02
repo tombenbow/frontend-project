@@ -12,16 +12,6 @@ import BookReview from "./components/BookReview";
 import { Router } from "@reach/router";
 
 class App extends Component {
-  state = {
-    topicDescription: "",
-  };
-
-  updateAppState = (stateKey, stateValue) => {
-    this.setState({
-      [stateKey]: stateValue,
-    });
-  };
-
   render() {
     return (
       <div
@@ -36,11 +26,8 @@ class App extends Component {
 
         <Router>
           <HomeMenu path="/" />
-          <TopicMenu path="/topics" updateAppState={this.updateAppState} />
-          <ThatTopicMenu
-            path="/topics/:topic"
-            topicDescription={this.state.topicDescription}
-          />
+          <TopicMenu path="/topics" />
+          <ThatTopicMenu path="/topics/:topic" />
           <UsersMenu path="/users/" />
           <ThatUsersMenu path="users/:username" />
           <AllReviewsMenu path="/reviews" />

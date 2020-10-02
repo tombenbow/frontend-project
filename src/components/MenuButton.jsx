@@ -4,22 +4,10 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 
 class MenuButton extends Component {
-  updateAppState2 = () => {
-    if (
-      this.props.updateAppState &&
-      this.props.stateKey &&
-      this.props.stateValue
-    ) {
-      this.props.updateAppState(this.props.stateKey, this.props.stateValue);
-    }
-  };
 
   render() {
     return (
-      <MButton
-        to={`/${this.props.attribute}`}
-        onClick={() => this.updateAppState2()}
-      >
+      <MButton to={`/${this.props.attribute}`} >
         {this.props.buttonName}
       </MButton>
     );

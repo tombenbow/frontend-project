@@ -41,9 +41,6 @@ class TopicMenu extends Component {
             <MenuButton
               attribute={`topics/${topic.topic_name}`}
               buttonName={topic.topic_name}
-              updateAppState={this.props.updateAppState}
-              stateKey={"topicDescription"}
-              stateValue={topic.topic_description}
             />
           );
         })}

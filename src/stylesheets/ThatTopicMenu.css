@@ -14,18 +14,20 @@
   font-weight: "bold";
   font-size: 2em;
   margin-top: 1em;
+  margin-bottom: 1%;
 }
 
-.globeemoji {
-  margin-top: 1%;
+.topicEmoji {
   max-width: 150px;
   max-height: 150px;
-  margin: 20px;
+  margin: 0%;
 }
 
 .topicDescription {
   font-family: "Lato", "sans-serif";
   font-size: 1em;
+  margin: 1% 5% 0% 5%;
+  text-align: center;
 }
 
 .spinnerbox {
