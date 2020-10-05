@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-body {
-  height: 100%;
-  margin: 0;
-}
 .allReviewsGrid {
   display: flex;
   flex-direction: column;
@@ -11,25 +7,32 @@ body {
   align-items: center;
   min-height: 100%;
   margin-bottom: 60px;
+  font-family: "Lato", "sans-serif";
+  text-align: center;
 }
 
-.pagetitle {
-  font-family: "Lato", "sans-serif";
+.reviewTitle {
+  font-weight: "bold";
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+.pageTitle {
   font-weight: "bold";
   font-size: 2em;
   margin-top: 1em;
 }
 
-.userDetails {
-  font-family: "Lato", "sans-serif";
-  font-size: 0.8em;
-}
-
-.profilepic {
+.profilepicBR {
   margin-top: 1%;
   max-width: 150px;
   max-height: 150px;
   margin: 20px;
+}
+
+.review {
+  margin: 1% 6% 0% 6%;
+  font-size: 1em;
 }
 
 .spinnerbox {

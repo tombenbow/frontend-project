@@ -7,17 +7,16 @@
   align-items: center;
   min-height: 100%;
   margin-bottom: 60px;
+  font-family: "Lato", "sans-serif";
 }
 
 .pagetitle {
-  font-family: "Lato", "sans-serif";
   font-weight: "bold";
   font-size: 2em;
   margin-top: 1em;
 }
 
 .userDetails {
-  font-family: "Lato", "sans-serif";
   font-size: 0.8em;
 }
 

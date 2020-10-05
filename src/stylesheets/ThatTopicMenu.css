@@ -7,10 +7,10 @@
   align-items: center;
   min-height: 100%;
   margin-bottom: 60px;
+  font-family: "Lato", "sans-serif";
 }
 
 .pagetitle {
-  font-family: "Lato", "sans-serif";
   font-weight: "bold";
   font-size: 2em;
   margin-top: 1em;
@@ -24,7 +24,6 @@
 }
 
 .topicDescription {
-  font-family: "Lato", "sans-serif";
   font-size: 1em;
   margin: 1% 5% 0% 5%;
   text-align: center;
