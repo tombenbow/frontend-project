@@ -35,6 +35,13 @@
   font-size: 1em;
 }
 
+.commentsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
 .spinnerbox {
   height: 85vh; 
   width: 100%;

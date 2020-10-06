@@ -10,6 +10,7 @@ class CommentButton extends Component {
         <ProfileButton to={`${this.props.attribute}`} className="profileButton">
           {" "}
           <img
+            className="profileImage"
             src={this.props.photo}
             alt="profilepic"
           />{" "}
