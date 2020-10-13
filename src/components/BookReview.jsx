@@ -4,6 +4,8 @@ import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 import { Link } from "@reach/router";
 import styled from "styled-components";
+import Rating from "./Rating";
+import ReviewVote from "./ReviewVote";
 // import CommentButton from "./CommentButton";
 
 class Bookreview extends Component {
@@ -27,7 +29,7 @@ class Bookreview extends Component {
           photo: data.requestedBookReview[0].profile_picture,
           year_book_written_in: data.requestedBookReview[0].year_book_written_in,
           rating: data.requestedBookReview[0].book_rating_out_of_5,
-          review_votes:  data.requestedBookReview[0].review_votes
+          review_votes: data.requestedBookReview[0].review_votes,
         });
         return data.requestedBookReview[0].username;
       })
@@ -50,21 +52,27 @@ class Bookreview extends Component {
 
   render() {
     return this.state.isLoaded ? (
-      <div>
-      <div className="allReviewsGrid">
-        <h2 className="pageTitle"> {this.state.username} </h2>
-        <ProfileButton to={`/users/${this.state.username}`}>
-          <img
-            className="profilepicBR"
-            src={this.state.photo}
-            alt="profilepic"
-          />
-        </ProfileButton>
-        <h1 className="reviewTitle">{this.state.title} ({this.state.year_book_written_in})</h1>
-        <p className="review"> {this.state.body_of_review} </p>
-      </div>
-
-      </div>
+      <>
+        <div className="TheReview">
+          <h2 className="pageTitle"> {this.state.username} </h2>
+          <ProfileButton to={`/users/${this.state.username}`}>
+            <img
+              className="profilepicBR"
+              src={this.state.photo}
+              alt="profilepic"
+            />
+          </ProfileButton>
+          <h1 className="reviewTitle">
+            {this.state.title} ({this.state.year_book_written_in})
+          </h1>
+          <Rating rating={this.state.rating}/>
+          <p className="review"> {this.state.body_of_review} </p>
+        </div>
+        <div>
+        <h1 style={{fontWeight: "bold", fontSize: "x-large", display: "flex", justifyContent: "center"}}> Was this Review helpful?</h1>
+        <ReviewVote votes={this.state.review_votes} style={{}}/>
+        </div>
+      </>
     ) : (
       <div className="spinnerbox">
         <Spinner animation="border" style={{ color: "#343a40" }} />
