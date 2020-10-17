@@ -6,7 +6,7 @@ import { Link } from "@reach/router";
 import styled from "styled-components";
 import Rating from "./Rating";
 import ReviewVote from "./ReviewVote";
-// import CommentButton from "./CommentButton";
+import Comment from "./Comment";
 
 class Bookreview extends Component {
   state = {
@@ -27,7 +27,8 @@ class Bookreview extends Component {
           username: data.requestedBookReview[0].username,
           body_of_review: data.requestedBookReview[0].body_of_review,
           photo: data.requestedBookReview[0].profile_picture,
-          year_book_written_in: data.requestedBookReview[0].year_book_written_in,
+          year_book_written_in:
+            data.requestedBookReview[0].year_book_written_in,
           rating: data.requestedBookReview[0].book_rating_out_of_5,
           review_votes: data.requestedBookReview[0].review_votes,
         });
@@ -65,12 +66,37 @@ class Bookreview extends Component {
           <h1 className="reviewTitle">
             {this.state.title} ({this.state.year_book_written_in})
           </h1>
-          <Rating rating={this.state.rating}/>
+          <Rating rating={this.state.rating} />
           <p className="review"> {this.state.body_of_review} </p>
         </div>
         <div>
-        <h1 style={{fontWeight: "bold", fontSize: "x-large", display: "flex", justifyContent: "center"}}> Was this Review helpful?</h1>
-        <ReviewVote votes={this.state.review_votes} style={{}}/>
+          <h1
+            style={{
+              fontWeight: "bold",
+              fontSize: "x-large",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            {" "}
+            Was this Review helpful?
+          </h1>
+          <ReviewVote
+            votes={this.state.review_votes}
+            review_id={this.props.review_id}
+          />
+        </div>
+        <div>
+          {this.state.comments.map((comment) => {
+            return (
+              <Comment
+                profilePicture={comment.profile_picture}
+                votes={comment.comment_votes}
+                username={comment.username}
+                body={comment.body}
+              />
+            );
+          })}
         </div>
       </>
     ) : (

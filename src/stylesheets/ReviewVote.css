@@ -1,4 +1,30 @@
 .ReviewVote {
     margin: 0%;
     font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 50px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+.upVoteReview {
+    margin-right: 20px;
+    color: green;
+    opacity: 0.4;
+}
+
+.upVoteReview:hover {
+    opacity: 1;
+  }
+
+.downVoteReview {
+    margin-left: 20px;
+    color: red;
+    opacity: 0.4;
+}
+
+.downVoteReview:hover {
+    opacity: 1;
+  }

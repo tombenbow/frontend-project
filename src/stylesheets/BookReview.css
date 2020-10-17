@@ -33,6 +33,9 @@
 .review {
   margin: 1% 6% 0% 6%;
   font-size: 1em;
+  background-color: ghostwhite;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .commentsDiv {
