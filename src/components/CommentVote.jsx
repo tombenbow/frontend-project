@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../stylesheets/ReviewVote.css";
+import "../stylesheets/CommentVote.css";
 import {
   faArrowAltCircleDown,
   faArrowAltCircleUp,
@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
-class ReviewVote extends Component {
+class CommentVote extends Component {
   state = {
     votes: this.props.votes,
     UVstyle: "",
@@ -19,7 +19,7 @@ class ReviewVote extends Component {
   voteFunction = (vote, length) => {
     if (length === 1) {
       axios.patch(
-        `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}`,
+        `https://bookreview-project.herokuapp.com/api/comments/${this.props.comment_key}`,
         {
           vote: vote,
         }
@@ -28,14 +28,14 @@ class ReviewVote extends Component {
     if (length === 2) {
       axios
         .patch(
-          `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}`,
+            `https://bookreview-project.herokuapp.com/api/comments/${this.props.comment_key}`,
           {
             vote: vote,
           }
         )
         .then(() => {
           axios.patch(
-            `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}`,
+            `https://bookreview-project.herokuapp.com/api/comments/${this.props.comment_key}`,
             {
               vote: vote,
             }
@@ -46,11 +46,11 @@ class ReviewVote extends Component {
 
   render() {
     return (
-      <div className="ReviewVote">
+      <div className="CommentVote">
         <FontAwesomeIcon
           icon={faArrowAltCircleUp}
           className="upVoteReview"
-          style={{ opacity: this.state.UVstyle }}
+          style={{ opacity: this.state.UVstyle, marginRight: "0px" }}
           onClick={() => {
             if (this.state.UVvoted === false && this.state.DVvoted === false) {
               this.setState({
@@ -60,6 +60,7 @@ class ReviewVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes + 1,
               });
+              console.log("voteuponce")
               this.voteFunction("up", 1);
             }
             if (this.state.UVvoted === false && this.state.DVvoted === true) {
@@ -70,6 +71,7 @@ class ReviewVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes + 1,
               });
+              console.log("voteuptwice")
               this.voteFunction("up", 2);
             }
             if (this.state.UVvoted === true) {
@@ -78,15 +80,16 @@ class ReviewVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes,
               });
+              console.log("votedownonce")
               this.voteFunction("down", 1);
             }
           }}
         />
-        {this.state.votes}
+        <p style={{margin: "0px"}}>{this.state.votes}</p>
         <FontAwesomeIcon
           icon={faArrowAltCircleDown}
           className="downVoteReview"
-          style={{ opacity: this.state.DVstyle }}
+          style={{ opacity: this.state.DVstyle, marginLeft: "0px" }}
           onClick={() => {
             if (this.state.DVvoted === false && this.state.UVvoted === false) {
               this.setState({
@@ -96,6 +99,7 @@ class ReviewVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes - 1,
               });
+              console.log("votedownonce")
               this.voteFunction("down", 1);
             }
             if (this.state.DVvoted === false && this.state.UVvoted === true) {
@@ -106,6 +110,7 @@ class ReviewVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes - 1,
               });
+              console.log("votedowntwice")
               this.voteFunction("down", 2);
             }
             if (this.state.DVvoted === true) {
@@ -114,6 +119,7 @@ class ReviewVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes,
               });
+              console.log("voteuponce")
               this.voteFunction("up", 1);
             }
           }}
@@ -123,4 +129,4 @@ class ReviewVote extends Component {
   }
 }
 
-export default ReviewVote;
+export default CommentVote;

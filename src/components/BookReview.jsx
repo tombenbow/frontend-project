@@ -86,7 +86,7 @@ class Bookreview extends Component {
             review_id={this.props.review_id}
           />
         </div>
-        <div>
+        <div className="commentSection">
           {this.state.comments.map((comment) => {
             return (
               <Comment
@@ -95,6 +95,7 @@ class Bookreview extends Component {
                 votes={comment.comment_votes}
                 username={comment.username}
                 body={comment.body}
+                comment_key={comment.comment_key}
               />
             );
           })}

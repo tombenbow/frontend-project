@@ -1,3 +1,63 @@
 .commentBox {
-    margin-bottom: 100px;
+    margin-bottom: 10px;
+    background-color: ghostwhite;
+    border-radius: 5px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commentContent {
+    font-size: 1em;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.commentProfilePic {
+    height: 100px;
+    width: 100px;
+}
+
+.username {
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 1.4em;
+}
+
+.theComment {
+    margin-bottom: 0px;
+    font-size: 1.1em;
+}
+
+@media screen and (max-width: 700px) {
+    .commentBox {
+        margin-bottom: 10px;
+        background-color: ghostwhite;
+        border-radius: 5px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .commentContent {
+        font-size: 1em;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .username {
+        font-weight: bold;
+        margin-bottom: 0px;
+        font-size: 1em;
+    }
+    .theComment {
+        margin-bottom: 0px;
+        font-size: 0.8em;
+    }
 }
