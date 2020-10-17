@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MenuButton from "./MenuButton";
 import "../stylesheets/UsersMenu.css";
 import axios from "axios";
-import Spinner from 'react-bootstrap/Spinner'
+import Spinner from "react-bootstrap/Spinner";
 
 class UsersMenu extends Component {
   state = {
@@ -14,13 +14,12 @@ class UsersMenu extends Component {
     axios
       .get("https://bookreview-project.herokuapp.com/api/users/allusers")
       .then((response) => {
-        console.log(response.data);
         return response.data;
       })
       .then((data) => {
         this.setState({
           users: data.all_users,
-          isLoaded: !this.state.isLoaded
+          isLoaded: !this.state.isLoaded,
         });
       });
   }
@@ -37,9 +36,14 @@ class UsersMenu extends Component {
         />
 
         {this.state.users.map((users) => {
-          return <MenuButton attribute={`users/${users.username}`} buttonName={users.username} />;
+          return (
+            <MenuButton
+              attribute={`users/${users.username}`}
+              buttonName={users.username}
+              key={users.username}
+            />
+          );
         })}
-
       </div>
     ) : (
       <div className="spinnerbox">

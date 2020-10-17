@@ -90,6 +90,7 @@ class Bookreview extends Component {
           {this.state.comments.map((comment) => {
             return (
               <Comment
+                key={comment.comment_key}
                 profilePicture={comment.profile_picture}
                 votes={comment.comment_votes}
                 username={comment.username}

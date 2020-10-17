@@ -63,6 +63,7 @@ class AllReviewsMenu extends Component {
               buttonName={bookreview.title}
               key={bookreview.review_id}
               attribute={`reviews/${bookreview.review_id}`}
+
             />
           );
         })}

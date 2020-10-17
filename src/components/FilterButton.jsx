@@ -24,7 +24,7 @@ class FilterButton extends Component {
               this.handleChange(event, "sort_by");
             }}
           >
-            <option value="Sort By" key="" disabled selected hidden>
+            <option defaultValue="Sort By" key="" disabled selected hidden>
               Order By
             </option>
             <option value="review_id" key="review_id">
@@ -46,7 +46,7 @@ class FilterButton extends Component {
               this.handleChange(event, "order");
             }}
           >
-            <option value="asc" key="Ascending">
+            <option defaultValue="asc" key="Ascending">
               Ascending
             </option>
             <option value="desc" key="Descending">

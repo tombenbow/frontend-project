@@ -41,6 +41,7 @@ class TopicMenu extends Component {
             <MenuButton
               attribute={`topics/${topic.topic_name}`}
               buttonName={topic.topic_name}
+              key={topic.topic_name}
             />
           );
         })}

@@ -9,6 +9,7 @@ class Rating extends Component {
                 <img
                 src="https://raw.githubusercontent.com/dreyescat/react-rating/master/assets/images/star-full.png"
                 alt="rating"
+                key={i}
               />
             )
         }
@@ -18,6 +19,7 @@ class Rating extends Component {
                 <img
                 src="https://raw.githubusercontent.com/dreyescat/react-rating/master/assets/images/star-empty.png"
                 alt="rating"
+                key={i + this.props.rating}
               />
             )
         }

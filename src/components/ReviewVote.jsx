@@ -16,22 +16,56 @@ class ReviewVote extends Component {
     DVvoted: false,
   };
 
-  voteFunction = (vote) => {
-    axios.patch(
-      `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}`,
-      {
-        vote: vote,
-      },
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "PATCH",
-          "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorisation",
+  voteFunction = (vote, length) => {
+    if (length === 1) {
+      axios.patch(
+        `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}`,
+        {
+          vote: vote,
         },
-        
-      }
-    );
-    console.log("voted");
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "PATCH",
+            "Access-Control-Allow-Headers":
+              "Content-Type, Access-Control-Allow-Headers, Authorisation",
+          },
+        }
+      );
+    }
+    if (length === 2) {
+      axios
+        .patch(
+          `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}`,
+          {
+            vote: vote,
+          },
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Methods": "PATCH",
+              "Access-Control-Allow-Headers":
+                "Content-Type, Access-Control-Allow-Headers, Authorisation",
+            },
+          }
+        )
+        .then(() => {
+          axios.patch(
+            `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}`,
+            {
+              vote: vote,
+            },
+            {
+              headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "PATCH",
+                "Access-Control-Allow-Headers":
+                  "Content-Type, Access-Control-Allow-Headers, Authorisation",
+              },
+            }
+          );
+        });
+    }
   };
 
   render() {
@@ -50,8 +84,7 @@ class ReviewVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes + 1,
               });
-              console.log("upVoteOnce");
-              this.voteFunction("up");
+              this.voteFunction("up", 1);
             }
             if (this.state.UVvoted === false && this.state.DVvoted === true) {
               this.setState({
@@ -61,7 +94,7 @@ class ReviewVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes + 1,
               });
-              console.log("upVoteTwice");
+              this.voteFunction("up", 2);
             }
             if (this.state.UVvoted === true) {
               this.setState({
@@ -69,7 +102,7 @@ class ReviewVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes,
               });
-              console.log("unvoteonce");
+              this.voteFunction("down", 1);
             }
           }}
         />
@@ -87,7 +120,7 @@ class ReviewVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes - 1,
               });
-              console.log("voteDownOnce");
+              this.voteFunction("down", 1);
             }
             if (this.state.DVvoted === false && this.state.UVvoted === true) {
               this.setState({
@@ -97,7 +130,7 @@ class ReviewVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes - 1,
               });
-              console.log("voteDownTwice");
+              this.voteFunction("down", 2);
             }
             if (this.state.DVvoted === true) {
               this.setState({
@@ -105,7 +138,7 @@ class ReviewVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes,
               });
-              console.log("unvoteOnce");
+              this.voteFunction("up", 1);
             }
           }}
         />
