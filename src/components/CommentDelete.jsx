@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../stylesheets/CommentDelete.css";
-import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class CommentDelete extends Component {
@@ -16,7 +16,7 @@ class CommentDelete extends Component {
     return (
       <div className="CommentVote">
         <FontAwesomeIcon
-          icon={faArrowAltCircleUp}
+          icon={faTrash}
           className="deleteComment"
           onClick = {() => {
               this.props.deleteComment(this.props.comment_key)

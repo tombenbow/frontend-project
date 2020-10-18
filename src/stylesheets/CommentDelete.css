@@ -4,13 +4,12 @@
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-right: 5px;
 }
 
 .deleteComment {
-    color: green;
     opacity: 0.4;
 }
 
