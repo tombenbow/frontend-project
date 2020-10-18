@@ -1,0 +1,13 @@
+
+.commentBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 1em;
+}
+
+.theComment {
+    width: 70%;
+    margin-right: 3px;
+}

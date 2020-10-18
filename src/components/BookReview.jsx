@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Rating from "./Rating";
 import ReviewVote from "./ReviewVote";
 import Comment from "./Comment";
+import PostComment from "./PostComment";
 
 class Bookreview extends Component {
   state = {
@@ -28,7 +29,7 @@ class Bookreview extends Component {
           body_of_review: data.requestedBookReview[0].body_of_review,
           photo: data.requestedBookReview[0].profile_picture,
           year_book_written_in:
-            data.requestedBookReview[0].year_book_written_in,
+          data.requestedBookReview[0].year_book_written_in,
           rating: data.requestedBookReview[0].book_rating_out_of_5,
           review_votes: data.requestedBookReview[0].review_votes,
         });
@@ -50,6 +51,42 @@ class Bookreview extends Component {
           });
       });
   }
+
+  postNewComment = (comment) => {
+    axios
+      .post(
+        `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}/comments`,
+        {
+          body: comment,
+          username: "billytheshark11",
+        }
+      )
+      .then(() => {
+        axios
+          .get(
+            `https://bookreview-project.herokuapp.com/api/bookreviews/${this.props.review_id}/comments`
+          )
+          .then((response) => {
+            return response.data;
+          })
+          .then((data) => {
+            this.setState({
+              comments: data.theReviewsComments,
+            });
+          });
+      });
+  };
+
+  deleteComment = (comment_key) => {
+    console.log(comment_key)
+    axios.delete(
+      `https://bookreview-project.herokuapp.com/api/comments/${comment_key}`,
+      {
+        params: {username: "billytheshark11"}
+      }
+    )
+  }
+
 
   render() {
     return this.state.isLoaded ? (
@@ -87,6 +124,7 @@ class Bookreview extends Component {
           />
         </div>
         <div className="commentSection">
+          <PostComment postNewComment={this.postNewComment} />
           {this.state.comments.map((comment) => {
             return (
               <Comment
@@ -96,6 +134,7 @@ class Bookreview extends Component {
                 username={comment.username}
                 body={comment.body}
                 comment_key={comment.comment_key}
+                deleteComment={this.deleteComment}
               />
             );
           })}

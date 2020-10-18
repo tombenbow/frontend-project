@@ -19,7 +19,7 @@ class App extends Component {
           minHeight: "100%",
           position: "absolute",
           width: "100%",
-          margin: 0,
+          margin: "0"
         }}
       >
         <TheNavbar />

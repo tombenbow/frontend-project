@@ -3,20 +3,59 @@
 .homePGrid {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items:center;
-  min-height: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 60px;
+  margin-top: 10px;
 }
 
 .websitename {
   font-family: "Lato", "sans-serif";
-  font-weight: "bold";
-  font-size: 2em;
+  font-weight: bold;
+  font-size: 3em;
   margin-top: 1em;
 }
 
 .bookemoji {
   margin-top: 1%;
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+  /* OPTIMISED FOR IPAD PRO */
+  @media screen and (height: 1366px) and (width: 1024px) {
+    .websitename {
+      font-family: "Lato", "sans-serif";
+      font-weight: bold;
+      font-size: 5em;
+      margin-top: 1em;
+    }
+
+    .bookemoji {
+      margin-top: 1%;
+      min-width: 300px;
+      min-height: 300px;
+    }
+  }
+
+/* OPTIMISED FOR PHONES */
+@media screen and (max-height: 850px) and (max-width: 451px) {
+  .homePGrid {
+    margin-top: 5px;
+  }
+
+  .websitename {
+    font-family: "Lato", "sans-serif";
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 1em;
+  }
+
+  .bookemoji {
+    margin-top: 1%;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
 }

@@ -9,17 +9,17 @@
 }
 
 .commentContent {
-    font-size: 1em;
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-left: 10px;
 }
 
 .commentProfilePic {
-    height: 100px;
-    width: 100px;
+    min-height: 100px;
+    min-width: 100px;
 }
 
 .username {
@@ -33,7 +33,7 @@
     font-size: 1.1em;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
     .commentBox {
         margin-bottom: 10px;
         background-color: ghostwhite;
@@ -44,20 +44,24 @@
         align-items: center;
     }
     .commentContent {
-        font-size: 1em;
         width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        margin-left: 5px;
     }
     .username {
         font-weight: bold;
         margin-bottom: 0px;
-        font-size: 1em;
+        font-size: 0.9em;
     }
     .theComment {
         margin-bottom: 0px;
-        font-size: 0.8em;
+        font-size: 0.7em;
+    }
+    .commentProfilePic {
+        height: 80px;
+        width: 80px;
     }
 }

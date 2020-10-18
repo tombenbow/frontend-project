@@ -11,13 +11,13 @@
 }
 
 .pagetitle {
-  font-weight: "bold";
+  font-weight: bold;
   font-size: 2em;
   margin-top: 1em;
 }
 
 .userDetails {
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 
 .profilepic {
@@ -35,3 +35,16 @@
   align-items: center;
   align-content: center;
 }
+
+  /* OPTIMISED FOR IPAD PRO */
+  @media screen and (height: 1366px) and (width: 1024px) {
+    .pagetitle {
+      font-weight: bold;
+      font-size: 4em!important;
+      margin-top: 0;
+    }
+    
+    .userDetails {
+      font-size: 2em;
+    }
+  }

@@ -21,11 +21,11 @@ const MButton = styled(Link)`
   margin-top: 20px;
   width: 80%;
   color: black;
-  border-radius: 10px;
+  border-radius: 15px;
   border-color: rgb(240, 240, 240);
   text-align: center;
-  padding: 20px;
-  font-size: large;
+  padding: 25px;
+  font-size: x-large;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -39,7 +39,6 @@ const MButton = styled(Link)`
     color: black;
   }
 
-  /* actually what it looks like afterward */
   ::before {
     content: "";
     position: absolute;
@@ -55,9 +54,22 @@ const MButton = styled(Link)`
     text-decoration: none;
   }
 
-  /* what the bit that's moved looks like once the animation is complete */
   :hover::before {
     height: 0%;
+  }
+
+  /* OPTIMISED FOR SMALLER PHONES */
+  @media screen and (max-height: 700px) and (max-width: 450px)  {
+    padding: 20px;
+    margin-top: 20px;
+    font-size: large;
+  }
+
+  /* OPTIMISED FOR IPAD PRO */
+  @media screen and (height: 1366px) and (width: 1024px)  {
+    padding: 30px;
+    margin-top: 30px;
+    font-size: 2em;
   }
 `;
 

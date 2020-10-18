@@ -9,20 +9,11 @@
     margin-right: 5px;
 }
 
-.upVoteComment {
+.deleteComment {
     color: green;
     opacity: 0.4;
 }
 
-.upVoteComment:hover {
-    opacity: 1;
-  }
-
-.downVoteComment {
-    color: red;
-    opacity: 0.4;
-}
-
-.downVoteComment:hover {
+.deleteComment:hover {
     opacity: 1;
   }

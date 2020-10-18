@@ -28,7 +28,7 @@ class CommentVote extends Component {
     if (length === 2) {
       axios
         .patch(
-            `https://bookreview-project.herokuapp.com/api/comments/${this.props.comment_key}`,
+          `https://bookreview-project.herokuapp.com/api/comments/${this.props.comment_key}`,
           {
             vote: vote,
           }
@@ -49,7 +49,7 @@ class CommentVote extends Component {
       <div className="CommentVote">
         <FontAwesomeIcon
           icon={faArrowAltCircleUp}
-          className="upVoteReview"
+          className="upVoteComment"
           style={{ opacity: this.state.UVstyle, marginRight: "0px" }}
           onClick={() => {
             if (this.state.UVvoted === false && this.state.DVvoted === false) {
@@ -60,7 +60,6 @@ class CommentVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes + 1,
               });
-              console.log("voteuponce")
               this.voteFunction("up", 1);
             }
             if (this.state.UVvoted === false && this.state.DVvoted === true) {
@@ -71,7 +70,6 @@ class CommentVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes + 1,
               });
-              console.log("voteuptwice")
               this.voteFunction("up", 2);
             }
             if (this.state.UVvoted === true) {
@@ -80,15 +78,14 @@ class CommentVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes,
               });
-              console.log("votedownonce")
               this.voteFunction("down", 1);
             }
           }}
         />
-        <p style={{margin: "0px"}}>{this.state.votes}</p>
+        <p style={{ margin: "0px" }}>{this.state.votes}</p>
         <FontAwesomeIcon
           icon={faArrowAltCircleDown}
-          className="downVoteReview"
+          className="downVoteComment"
           style={{ opacity: this.state.DVstyle, marginLeft: "0px" }}
           onClick={() => {
             if (this.state.DVvoted === false && this.state.UVvoted === false) {
@@ -99,7 +96,6 @@ class CommentVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes - 1,
               });
-              console.log("votedownonce")
               this.voteFunction("down", 1);
             }
             if (this.state.DVvoted === false && this.state.UVvoted === true) {
@@ -110,7 +106,6 @@ class CommentVote extends Component {
                 UVstyle: "",
                 votes: this.props.votes - 1,
               });
-              console.log("votedowntwice")
               this.voteFunction("down", 2);
             }
             if (this.state.DVvoted === true) {
@@ -119,7 +114,6 @@ class CommentVote extends Component {
                 DVstyle: "",
                 votes: this.props.votes,
               });
-              console.log("voteuponce")
               this.voteFunction("up", 1);
             }
           }}
