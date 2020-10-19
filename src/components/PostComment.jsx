@@ -18,7 +18,7 @@ class postComment extends Component {
       >
         <textarea
           placeholder="Enter Comment Here"
-          className="theComment"
+          className="commentPostBox"
           style={{ resize: "none" }}
           onChange={(e) => {
               this.setState({
@@ -26,7 +26,7 @@ class postComment extends Component {
               })
           }}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="submitButton">Submit</button>
       </form>
     );
   }

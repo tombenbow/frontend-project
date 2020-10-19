@@ -44,13 +44,13 @@ class ThatUsersMenu extends Component {
               isLoaded: !this.state.isLoaded,
             });
           });
-      })
+      });
   }
 
   render() {
     return this.state.isLoaded ? (
       <div className="allReviewsGrid">
-        <h1 className="pagetitle">{this.props.username}</h1>
+        <p className="pagetitle">{this.props.username}</p>
 
         <img className="profilepic" src={this.state.photo} alt="profilepic" />
 

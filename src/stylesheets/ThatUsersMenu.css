@@ -12,23 +12,24 @@
 
 .pagetitle {
   font-weight: bold;
-  font-size: 2em;
-  margin-top: 1em;
+  font-size: 1.8em;
+  margin-top: 0em;
 }
 
 .userDetails {
   font-size: 1.2em;
+  margin-bottom: 0px;
 }
 
 .profilepic {
   margin-top: 1%;
-  max-width: 150px;
-  max-height: 150px;
+  width: 170px;
+  height: 170px;
   margin: 20px;
 }
 
 .spinnerbox {
-  height: 85vh; 
+  height: 85vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -36,15 +37,28 @@
   align-content: center;
 }
 
-  /* OPTIMISED FOR IPAD PRO */
-  @media screen and (height: 1366px) and (width: 1024px) {
-    .pagetitle {
-      font-weight: bold;
-      font-size: 4em!important;
-      margin-top: 0;
-    }
-    
-    .userDetails {
-      font-size: 2em;
-    }
+/* OPTIMISED FOR PHONES */
+@media screen and (max-height: 850px) and (max-width: 451px) {
+  .profilepic {
+    margin-top: 1%;
+    height: 100px;
+    width: 100px;
+    margin: 10px 20px 10px 20px;
   }
+}
+
+
+/* OPTIMISED FOR IPAD PRO */
+@media screen and (height: 1366px) and (width: 1024px) {
+  .pagetitle {
+    font-weight: bold;
+    font-size: 4em !important;
+    margin-top: 0;
+  }
+
+  .userDetails {
+    font-size: 2em;
+    color: green;
+  }
+}
+
