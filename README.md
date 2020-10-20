@@ -1,8 +1,8 @@
 # frontend-project
   
-This repo holds the frontend for the website Bookreviews.io, which is a book reviews website (links to hosted BE and BE repo are below). The frontend was built in react.js.
+This repo holds the frontend for the website Bookreviews.io, which is a responsive book reviews website built in react.js (links to hosted BE and BE repo are below).
 
-You will naviagte the website as if you are the user 'billytheshark11', when you post comments they will be associated with this account. You have permissions to delete comments posted under the username 'billytheshark11'.
+You naviagte the website as if you are the user 'billytheshark11', when you post comments they will be associated with this account. You have permissions to delete comments posted under the username 'billytheshark11'.
 
 The FE is hosted on Heroku and can be accessed via the following URL: https://tombenbow-br-project.herokuapp.com/.
 
